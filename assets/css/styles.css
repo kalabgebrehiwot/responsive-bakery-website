@@ -124,9 +124,91 @@ img {
 }
 
 /*=============== HEADER & NAV ===============*/
+.header{
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background-color: transparent;
+  z-index: var(--z-fixed);
+}
+.nav{
+  position: relative;
+  height: var(--header-height);
+  display: flex;
+  justify-content: space-between;
+  align-items: center; 
+}
+.nav__logo{
+  color: var(--first-color);
+  font-size: var(--h2-font-size);
+  font-family: var(--second-font);
+  transition: color .3s;
+}
+.nav__toogle,
+.nav__close{
+  font-size: 1.5rem;
+  color: var(--title-color);
+  cursor: pointer;
 
+}
 
 /* Navigation for mobile devices */
+@media screen and (max-width: 1150px){
+  .nav__menu{
+    position: fixed;
+    top: 0%;
+    right: -100%;
+    background-color: rgb(165, 71, 9);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter:blur(16px);/*for safari*/
+    width: 80%;
+    height:100%;
+    padding:6rem 3rem 0 ;
+    transition: right .8s;
+  }
+}
+.nav__list{
+  display: flex;
+  flex-direction: column;
+  row-gap: 2.6rem;
+}
+.nav__link{
+  color: var(--title-color);
+  font-weight: var(--font-semi-bold);
+  transition:  color .4s;
+}
+.nav__link:hover{
+  color: var(--first-color);
+}
+.nav__close{
+  position: absolute;
+}
+.nav__close,
+.nav__img-1,
+.nav__img-2{
+  position: absolute;
+}
+.nav__close{
+  top: 1rem;
+  right: 1.5rem;
+}
+.nav__img-1{
+  width: 80px;
+  top: 11rem;
+  right: 0.75rem;
+}
+.nav__img-2{
+  width: 60px;
+  top: 28rem;
+  left: 6rem;
+}
+
+.show-menu{
+  right: 0;
+}
+
+
 
 
 /* Show menu */
@@ -140,7 +222,85 @@ img {
 
 /*=============== HOME ===============*/
 
+.home{
+  position: relative;
+  padding-top: 6.5rem; 
 
+}
+.home__container{
+  row-gap: 2rem;
+}
+.home__bg,
+.home__shadow{
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  width: 100px;
+  height: 100px;
+  z-index: -1;
+}
+.home__bg{
+  object-fit: cover;
+  object-position: center;
+}
+.home__shadow{
+  background: linear-gradient(180deg,
+                 hsla(0,0%,0%,0)0%,
+                 hsle(0,0%,6%)100% );
+}
+.home__data{
+  position: relative;
+  text-align: center;
+}
+.home__title{
+  font-size: var(--bigger-font-size);
+  font-family: var(--second-font);
+  margin-bottom: 1.5rem;
+}
+.home__bread{
+  width: 50px;
+  position: absolute;
+  top: 15rem;
+  left:4rem ;
+
+}
+.home__img{
+  rotate:15deg;
+}
+
+.home__footer,
+.home__social,
+.home__location{
+  display: flex;
+}
+.home__footer{
+  justify-content: space-between;
+  align-items: center;
+}
+.home__location{
+  align-items: center;
+  column-gap: .5rem;
+}
+.home__location i{
+  font-size: 1.5rem;
+  color: var(--first-color);
+}
+..home__location span{
+  color: var(--title-color);
+  font-size: var(--small-font-size);
+}
+.home__social{
+  column-gap: 1rem;
+}
+.home__social a{
+  color: var(--title-color);
+  font-size: 1.5rem;
+  transition:color .5s;
+}
+.home__social a:hover{
+  color: var(--first-color);
+  
+}
 /*=============== BUTTON ===============*/
 
 
