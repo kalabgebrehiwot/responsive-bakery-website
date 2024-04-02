@@ -215,7 +215,18 @@ img {
 
 
 /* Add blur header */
-
+.blur-header::after{
+  content: '';
+  position: absolute;
+  width: 1000%;
+  height: 100%;
+  background-color: hsla(0,0%,6%,.2);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px) ;/*for safari*/
+  top: 0%;
+  left: 0%;
+  z-index: -1;
+}
 
 /* Active link */
 
@@ -233,10 +244,10 @@ img {
 .home__bg,
 .home__shadow{
   position: absolute;
-  top: 0%;
-  left: 0%;
-  width: 100px;
-  height: 100px;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   z-index: -1;
 }
 .home__bg{
@@ -301,9 +312,21 @@ img {
   color: var(--first-color);
   
 }
+
 /*=============== BUTTON ===============*/
+.button{
+  display: inline-flex;
+  background: var(--first-color);
+  color:var(--black-color);
+  font-weight: var(--font-semi-bold);
+  padding: 1.125rem 2rem;
+  transition: background-color .4s;
+  border: none;
 
-
+}
+.button:hover{
+  background-color:var(--first-color-alt);
+}
 /*=============== NEW ===============*/
 
 
